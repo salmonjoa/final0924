@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import store from "../store/store";
-import { useSelector, useDispatch } from "react-redux";
 
-function Gather({ dishData }){
+function Gather(){
   let navigate = useNavigate();
   
   return (
@@ -12,15 +10,15 @@ function Gather({ dishData }){
         <div className="gatherL"><strong>{'nickname'}</strong> 님</div>
         <div className="gatherR">
           <div className="triple">
-            <p className="up">좋아요</p>
+            <p className="upj">좋아요</p>
             <p className="under" onClick={() => {navigate('/mypage/mylike')}}><strong>{'.length'}</strong></p>
           </div>
           <div className="triple">
-            <p className="up">먹어봄</p>
+            <p className="upj">먹어봄</p>
             <p className="under" onClick={() => {navigate('/mypage/myate')}}><strong>{'.length'}</strong></p>
           </div>
           <div className="triple">
-            <p className="up">댓글수</p>
+            <p className="upj">댓글수</p>
             <p className="under" onClick={() => {navigate('/mypage/reply')}}><strong>{'.length'}</strong></p>
           </div>
         </div>

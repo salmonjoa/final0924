@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-function Information(){
+function Information({ memData }){
 
 let navigate = useNavigate();
 let [pw, setPw] = useState('');
@@ -24,10 +24,6 @@ let [pw, setPw] = useState('');
             <Button className='ok' variant="dark"
                     onClick={()=>{pw == 1234 ? navigate("/editinfo") : alert('비번확인해')}}>확인</Button>
           </div>
-
-
-
-
     </div>
   );
 }

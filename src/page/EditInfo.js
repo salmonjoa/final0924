@@ -44,7 +44,11 @@ const EditInfo = () => {
                     onClick={()=>{navigate('/mypage')}}>취소</Button>
             {'-----'}
             <Button className='ok' variant="dark"
-                    onClick={()=>{}}>저장</Button>
+              onClick={()=>{
+                
+                alert('변경이 완료되었습니다.');
+                navigate('/mypage')
+              }}>저장</Button>
           </div>
 
       </div>

@@ -3,15 +3,28 @@ import Information from './Information'
 import Reply from './Reply'
 import Mylike from './Mylike'
 import Gather from './Gather'
-import { useSelector, useDispatch } from "react-redux";
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import Myate from './Myate'
+import {useEffect, useState} from 'react'
+import axios from 'axios';
 
-let Mypage = () => {
+let Mypage = ({realData}) => {
+
+    // 멤버 데이터 가져오기
+    let [memData, setMemData] = useState([]);
+//     useEffect(()=>{
+//       axios.get("http://192.168.0.10:8080/api/member/dishcomm-list/100") 
+//       // axios.get("https://jsonplaceholder.typicode.com/posts") 더미데이터
+//       .then((response)=>{
+//         // console.log(response.data)
+//         setMemData(response.data)
+//       })
+//       .catch(()=>{
+//         console.log('실패')
+//       })
+//     },[])
+// console.log(memData)
   let navigate = useNavigate();
-
-  const dishData = useSelector((state) => state.allData );
-  console.log(dishData)
 
   return(
     <div>
@@ -28,14 +41,15 @@ let Mypage = () => {
           </Col>
         </ListGroup>
       </div>
-
+    {realData?.length > 0 && (
     <Routes>
-      <Route path="/" element={<div className='floatR'><Gather dishData={dishData} /></div>}/>
-      <Route path="myinfo" element={<div className='floatR'><Information dishData={dishData} /></div>}/>
-      <Route path="mylike" element={<div className='floatR'><Mylike dishData={dishData} /></div>}/>
-      <Route path="myate" element={<div className='floatR'><Myate dishData={dishData} /></div>}/>
-      <Route path="reply" element={<div className='floatR'><Reply dishData={dishData} /></div>}/>
+      <Route path="/" element={<div className='floatR'><Gather /></div>}/>
+      <Route path="myinfo" element={<div className='floatR'><Information memData={memData} /></div>}/>
+      <Route path="mylike" element={<div className='floatR'><Mylike realData={realData} memData={memData} /></div>}/>
+      <Route path="myate" element={<div className='floatR'><Myate realData={realData} memData={memData} /></div>}/>
+      <Route path="reply" element={<div className='floatR'><Reply realData={realData} memData={memData} /></div>}/>
     </Routes>
+    )}
     </div>
   );
 }

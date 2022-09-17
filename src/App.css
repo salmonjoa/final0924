@@ -1,11 +1,11 @@
-.app {
+.appj {
   text-align: center;
   background-color: #D9D7F1;
   padding: 15px;
   margin-bottom: 5px;
 }
 
-.name{
+.namej{
   color: black;
   text-align: center;
   display: inline-block;
@@ -68,7 +68,7 @@ small{
   margin: auto;
 }
 
-.menubar{
+.menubarj{
   margin:auto;
 }
 .write{
@@ -130,13 +130,15 @@ small{
   color: white;
 }
 .smallL{
-  float: left;
-  width: 20%;
+  text-align: left;
+  display: inline-block;
+  width: 40%;
+  padding-left: 50px;
 }
 .smallR{
-  float: left;
-  width: 80%;
   text-align: left;
+  display: inline-block;
+  width: 60%;
 }
 .inlinePic{
   display: inline-block;
@@ -149,6 +151,23 @@ small{
 .delLike{
   text-align: right;
 }
+.oneline{
+  display: inline-block;
+}
+.outline{
+  float: right;
+}
+.arrReply{
+  display: inline-block;
+  text-align: right;
+  font-size: 7px;
+  font-style: italic;
+}
+.delrepB{
+  font-size: 10px;
+  background-color: #FFCBCB;
+  border-color: #FFCBCB;
+}
 .black{
   color: black;
 }
@@ -159,7 +178,7 @@ small{
   color: #b4aff3;
   cursor: pointer;
 }
-.titleD, .searchI, .inline{
+.titleD, .searchI, .inlinej{
   display: inline-block;
 }
 .searchI{
@@ -174,7 +193,17 @@ small{
   background-color: #FFFDDE;
   height: 35px;
   width: 60px;
-  border-style:outset;
+  border-color: #FFFDDE;
+}
+.replyB{
+  background-color: #FFFDDE;
+  height: 40px;
+  border-color: #FFFDDE;
+  width: 8%;
+}
+.replyTab{
+  width: 80%;
+  height: 40px;
 }
 .editCenter, .table, .detailList{
   width: 70%;
@@ -183,7 +212,9 @@ small{
 }
 .detailR{
   text-align: right;
+  font-size: 15px;
 }
+
 .td1{
   width: 30%;
   font-size: 20px;
@@ -213,7 +244,7 @@ small{
 .out{
   text-align: right;
 }
-.name, .out:hover{
+.name, .out, .mouse:hover{
   cursor: pointer;
 }
 .gather{
@@ -249,7 +280,7 @@ small{
   background-color: #FFFDDE;
   border-radius: 1em;
 }
-.up{
+.upj{
   padding: 10px;
   color: #a5f701;
   font-style: italic;
@@ -270,4 +301,170 @@ small{
 .phoneImage{
   width: 100%;
   height: 100%;
+}
+.imgSize{
+  width: 60%;
+}
+.App {
+  text-align: center;
+}
+
+
+
+
+
+
+/* 제목 */
+.my {
+  text-align: center;
+  background-color: #FFCBCB;
+  color: white;
+  text-shadow: 4px 4px 4px black;
+  padding: 30px;
+  font-size: 150%;
+  font-weight: bold;
+  
+}
+.b1{
+  background-color: #E7FBBE;
+
+}
+.b3{
+  background-color: #E7FBBE;
+}
+.btnup{
+  float: right;
+  text-align: center;
+  size: xx-large;
+  padding: 10px;
+  background-color: blueviolet;
+  font-weight: bolder;
+  color: white;
+}
+.img{
+  float: left;
+}
+.review{
+  text-align: center;
+  background-color: #FFCBCB;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  padding: 30px;
+}
+
+/* Search.js */
+.d-flex{
+  padding: 20px;
+  border: 1px solid #444444;
+  width: 100%;
+  min-width: 500px;
+}
+
+.my1 {
+  text-align: left;
+  background-color:#FFCBCB;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  padding: 20px;
+  padding-left: 30px;
+  font-weight: bolder;
+}
+
+.fi {
+  font-family: sans-serif;
+  text-align: center;
+  height: 40px;
+  width: 60px;
+  background: white;
+  float: left;
+}
+
+.up {
+  text-align: left;
+}
+
+.btn-container {
+  text-align: right;
+}
+
+.src {
+  text-decoration: none;
+}
+
+.bar {
+  padding: 40px;
+}
+.b1 {
+  border: 1px solid black;
+  float: left;
+  width: 33%;
+  height: 800px;
+  margin: auto;
+}
+.b2 {
+  border: 1px solid black;
+  float: left;
+  width: 33%;
+  height: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 1px;
+}
+.b3 {
+  border: 1px solid black;
+  float: left;
+  width: 33%;
+  height: 800px;
+  margin: auto;
+}
+.I1 {
+  margin: auto;
+  display: block;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.myForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.border.rounded.img-preview {
+  width: 300px;
+  height: 300px;
+}
+.leftF {
+  float: left;
+  padding: 30px;
+}
+.app {
+  text-align: center;
+  background-color: coral;
+  padding: 15px;
+  margin-bottom: 5px;
+}
+
+.name{
+  color: white;
+  text-align: center;
+}
+.menubar{
+  margin:auto;
+}
+.gridImg{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 10px;
+
+}
+.inline{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 1%;
+
 }

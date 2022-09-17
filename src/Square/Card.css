@@ -1,0 +1,31 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 50px;
+  border: 1px (0, 0, 0, 0.8);
+
+}
+.quickflip {
+cursor: pointer;
+position: relative;
+width: 300px;
+height: 300px;
+}
+.qf-card {
+opacity: 0.8;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background: rgb(255, 255, 255);
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+.qf-card.qf-front {
+position: relative;
+background: rgb(248, 246, 246);
+}
+.Image{
+  float: center;
+}
