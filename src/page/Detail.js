@@ -88,10 +88,11 @@ console.log(postData)
     axios.put("http://192.168.0.23:8080/api/dish/comm/edit/1/" + dc_num , fdata)
     .then((res)=>{
       console.log(res);
-      setPostData({...postData, commList:[...postData.commList, {mnum:1, RCP_SEQ:state, content:inputText, date: now.toString()}],});
+      // setPostData({...postData, commList:[...postData.commList, {mnum:1, RCP_SEQ:state, content:inputText, editdate: now.toString()}],});
+      console.log(now.toString())
       let commList = postData.commList.map((r, i)=>{
         return(
-          r.dc_num === dc_num ? {...r, content:inputText} : r
+          r.dc_num === dc_num ? {...r, content:inputText, editdate: now.toString()} : r
         )
       })
       setPostData({...postData, commList})
@@ -198,7 +199,7 @@ console.log(postData)
                       : <div>{r.content}</div>}
                   </h6>
                   <div className='outline'>
-                  <h6 className='arrReply'>{r.mnum} | {r.date}</h6>
+                  <h6 className='arrReply'>{r.mnum} | {r.editdate ? r.editdate :  r.date}</h6>
                   <span className='blind'>-----</span>
 
                   {editText === r.dc_num ?
@@ -224,11 +225,7 @@ console.log(postData)
            
           
           }</div>
-           {/* <div className='nameD'>
-            <button className='more' onClick={()=>{
-            }}>더보기</button>
-            <p className='direction'>⇓</p>
-          </div> */}
+
         </Tab>
       </Tabs>
     </div>

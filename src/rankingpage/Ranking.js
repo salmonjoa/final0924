@@ -2,12 +2,10 @@ import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import { ListGroup, Col } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import Board_Page from "./board-Page";
-import UserList from "./userlist";
-import NewBoard from "./newboard";
-import "./admin.css";
+import RanKingPage from "./LanKingPage";
+import RanKingDish from "./useranking";
 
-const Admin_Layout = () => {
+function Rankinglayout() {
   let navigate = useNavigate();
 
   return (
@@ -20,43 +18,33 @@ const Admin_Layout = () => {
                 <ListGroup.Item>
                   <Nav.Link
                     onClick={() => {
-                      navigate("/admin-Page/BoardPage/");
+                      navigate("/Rankinglayout/RanKingPage/");
                     }}
                   >
-                    <strong className="black">게시물관리</strong>
+                    <strong className="black">유저랭킹</strong>
                   </Nav.Link>
                 </ListGroup.Item>
-
+                <br></br>
                 <ListGroup.Item>
                   <Nav.Link
                     onClick={() => {
-                      navigate("/admin-Page/NewBoard/");
+                      navigate("/Rankinglayout/RanKingDish/");
                     }}
                   >
-                    <strong className="black">게시글 작성</strong>
+                    <strong className="black">레시피랭킹</strong>
                   </Nav.Link>
                 </ListGroup.Item>
                 <br />
-                <ListGroup.Item>
-                  <Nav.Link
-                    onClick={() => {
-                      navigate("/admin-Page/UserList/");
-                    }}
-                  >
-                    <strong className="black">유저 관리</strong>
-                  </Nav.Link>
-                </ListGroup.Item>
               </Nav>
             </Col>
           </ListGroup>
         </div>
       </div>
       <Routes>
-        <Route path="UserList" element={<UserList />} />
-        <Route path="NewBoard" element={<NewBoard />} />
-        <Route path="BoardPage" element={<Board_Page />} />
+        <Route path="RanKingPage" element={<RanKingPage />} />
+        <Route path="RanKingDish" element={<RanKingDish />} />
       </Routes>
     </div>
   );
-};
-export default Admin_Layout;
+}
+export default Rankinglayout;

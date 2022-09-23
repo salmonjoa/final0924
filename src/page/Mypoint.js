@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const user = { mnum: 102 };
+const user = { mnum: 1 };
 
 function Mypoint() {
   let navigate = useNavigate();
@@ -38,7 +38,7 @@ function Mypoint() {
   };
 
 
-  useEffect(() => getPoint(), []);
+  useEffect(() => {getPoint()}, []);
 
   return (
     <>

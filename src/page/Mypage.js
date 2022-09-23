@@ -4,6 +4,7 @@ import Reply from './Reply';
 import Mylike from './Mylike';
 import Mypoint from './Mypoint';
 import Gather from './Gather';
+import NoMem from './NoMem';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Myate from './Myate';
 import { useEffect, useState } from 'react';
@@ -33,7 +34,10 @@ let Mypage = ({ realData }) => {
     <div>
       <div className="floatL">
         <div className="info">
-          <strong> My Page </strong>
+          <strong className='mouse' 
+                  onClick={()=>{
+                    navigate('/mypage')
+                  }}> My Page </strong>
         </div>
         <ListGroup>
           <Col>
@@ -93,8 +97,10 @@ let Mypage = ({ realData }) => {
             path="/"
             element={
               <div className="floatR">
-                <Gather memData={memData}/>
+              {/* <Gather memData={memData}/> */}
+              <NoMem />
               </div>
+        
             }
           />
           <Route

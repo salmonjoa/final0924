@@ -112,7 +112,7 @@ small{
   margin: auto;
   margin-top: 30px;
   width: 80%;
-
+  display: inline-block;
 }
 .cnxl{
   background-color: white;

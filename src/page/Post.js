@@ -16,7 +16,7 @@ const Posts = ({ realData, indexOfFirst, indexOfLast }) => {
 
   const [inputState, setInputState] = useState('');
 
-  useEffect(()=>setSimple(realData),[realData])
+  useEffect(()=>{setSimple(realData)},[realData])
 
   const handleInput = (event) => {
     const input = event.target.value

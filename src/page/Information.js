@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import EditInfo from './EditInfo';
 
-const user = { mnum: 102, pw: 1 };
+const user = { mnum: 1, pw: 1 };
 
 function Information({ memData }) {
   let navigate = useNavigate();
@@ -15,7 +15,7 @@ function Information({ memData }) {
   return (
     <>
       {pw === 1234 ? (
-        <EditInfo memData={memData}/>
+        <EditInfo />
       ) : (
         <div className="comm">
           <h2>

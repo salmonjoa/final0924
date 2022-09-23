@@ -2,15 +2,14 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const user = { mnum: 6 };
+const user = { mnum: 1 };
 
-function Mylike({ realData, memData }) {
-  let [del, setDel] = useState(realData);
+function Mylike() {
   let navigate = useNavigate();
 
   const [page, setPage] = useState(1);
   const [likeList, setLikeList] = useState({ end: 0 });
-  const size = 1;
+  const size = 3;
 
   const getLike = async () => {
     const api = `http://3.38.19.221:8081/api/member/like-list/${user.mnum}`;
@@ -38,9 +37,8 @@ function Mylike({ realData, memData }) {
     }
   };
 
-  console.log(likeList)
-  useEffect(() => getLike(), []);
-  
+  useEffect(() => {getLike()}, []);
+  {console.log(likeList.dtoList)}
   return (
     <>
       <div className="comm">
@@ -51,10 +49,9 @@ function Mylike({ realData, memData }) {
         <hr />
         {likeList.dtoList &&
           likeList.dtoList.map((a, i) => (
-            <div key={i}>
+            <>
               <div className="inlinePic">
-                <div className="delLike">
-                
+                {/* <div className="delLike">
                   <button
                     className="close"
                     onClick={() => {
@@ -63,16 +60,15 @@ function Mylike({ realData, memData }) {
                       setDel(copy);
                     }}
                   >
-                    {console.log(likeList.dtoList)}
                     {' '}
                     ✖{' '}
                   </button>
-                </div>
+                </div> */}
                 <img
                   src={a.ATT_FILE_NO_MAIN}
                   width="100%"
                   onClick={() => {
-                    navigate('/detail/' + a?.RCP_SEQ);
+                    navigate('/detail/' + a.RCP_SEQ,{state:a.RCP_SEQ});
                   }}
                   
                 />
@@ -83,7 +79,7 @@ function Mylike({ realData, memData }) {
               {page <= likeList?.end && likeList?.dtoList?.length - 1 === i && (
                 <div onClick={getLike}>더보기</div>
               )}
-            </div>
+            </>
           ))}
       </div>
     </>

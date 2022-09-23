@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const user = { mnum: 102 };
+const user = { mnum: 1 };
 
 function Reply({ realData, memData }) {
   let navigate = useNavigate();
@@ -34,7 +34,7 @@ function Reply({ realData, memData }) {
     }
   };
 
-  useEffect(() => getReply(), []);
+  useEffect(() => {getReply()}, []);
 
   return (
     <>

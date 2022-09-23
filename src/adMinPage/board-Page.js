@@ -1,12 +1,26 @@
-import Customer from "../component/Customer";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./admin.css";
 import Table from "react-bootstrap/Table";
+import { Link, useNavigate } from "react-router-dom";
+import HorizonLine from "../component/HorizonLine";
 
 function Board_Page() {
   // axiox의 값을 받아오는 메서드-----------------------------------------
   const [boards, setBoards] = useState([]);
+  let navigate = useNavigate();
+
+  const handleClick = (board) =>
+    navigate("/admin-Page/NewBoard/", { state: board });
+
+  const onDelete = (dish_num) => {
+    axios
+      .delete(`http://192.168.0.23:8080/api/dish/delete/${dish_num}`)
+      .then((response) => {
+        setBoards(boards.filter((item) => item.dish_num !== dish_num));
+        console.log(response);
+      });
+  };
 
   useEffect(() => {
     axios.get("http://192.168.0.23:8080/api/dish/get").then((response) => {
@@ -32,7 +46,23 @@ function Board_Page() {
           </tr>
         </thead>
         <tbody>
-          <Customer boards={boards} />
+          {boards.map((board) => (
+            <tr key={board.dish_num}>
+              <th className="th1">{board.dish_num}</th>
+              <th className="th1">
+                <img src={board.mainIMG} width="100px"></img>
+              </th>
+              <th className="th1">{board.dish_name}</th>
+              <th className="th1">{board.writer}</th>
+              <th className="th1">{board.hit}</th>
+              <th className="th1">{board.date}</th>
+              <th className="th1">
+                <button onClick={() => handleClick(board)}>🛠️</button>
+                <button onClick={() => onDelete(board.dish_num)}>❌</button>
+              </th>
+            </tr>
+          ))}
+          <HorizonLine></HorizonLine>
         </tbody>
       </Table>
     </div>
