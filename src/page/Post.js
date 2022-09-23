@@ -4,7 +4,6 @@ import { TreeItem, TreeView } from '@material-ui/lab';
 
 const Posts = ({ realData, indexOfFirst, indexOfLast }) => {
   // 페이지 분리
-  let currentPosts = realData.slice(indexOfFirst, indexOfLast);
 
   let navigate = useNavigate();
   // current(realData);
@@ -37,6 +36,7 @@ const Posts = ({ realData, indexOfFirst, indexOfLast }) => {
       setSimple(filtered);
     }
   }
+  let currentPosts = simple.slice(indexOfFirst, indexOfLast);
 
   return (
     <>

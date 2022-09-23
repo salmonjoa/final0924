@@ -21,7 +21,6 @@ let dispatch = useDispatch();
   let [realData, setRealData] = useState([]);
     useEffect(()=>{
       axios.get("http://192.168.0.23:8080/api/dish/get")
-      // axios.get("https://jsonplaceholder.typicode.com/posts")  더미데이터
       .then((response)=>{
         // console.log(response.data)
         setRealData(response.data)
@@ -41,7 +40,8 @@ let dispatch = useDispatch();
         <Header />
       </div>
       <div className='appj'>
-      <h1 className='namej' onClick={() => {navigate('/')}}>Recipe(가제)</h1>
+      {/* <img src='./image/냉장고.png' width="70px" height="70px"/> */}
+      <h1 className='namej' onClick={() => {navigate('/')}}>냉장Go, 파먹Go!</h1>
         <Navbar>
           <Container>
 
@@ -52,6 +52,7 @@ let dispatch = useDispatch();
                 <Nav.Link className='var' onClick={() => {navigate('/square')}}><strong>광장🍀</strong></Nav.Link>
                 <Nav.Link className='var' onClick={() => {navigate('/rank')}}><strong>랭킹🏆</strong></Nav.Link>
                 <Nav.Link className='var' onClick={() => {navigate('/mypage')}}><strong>마이페이지👤</strong></Nav.Link>
+
               </Nav>
             </div>
           </Container>
@@ -62,10 +63,10 @@ let dispatch = useDispatch();
             <Route path="/main" element={<Cardfilp realData={realData}/>} />
             <Route path="/detail" element={<List realData={realData} />}/>
             <Route path="/square" element={<Square realData={realData}/>}/>
-            <Route path="/detail/:id" element={<Detail realData={realData} />}/>
+            <Route path="/detail/*" element={<Detail realData={realData} />}/>
             <Route path="/mypage/*" element={<Mypage realData={realData} />}/>
             <Route path="/mylike" element={<Mylike realData={realData} />}/>
-            <Route path="/editinfo" element={<EditInfo realData={realData} />}/>
+
           </Routes>
     </div>
   );

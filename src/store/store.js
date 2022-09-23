@@ -1,7 +1,7 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
 let allData = createSlice({
-    name : 'allData',
+    name : 'personal',
     initialState :[],
     reducers : {
         dish(state, action){
@@ -12,7 +12,7 @@ let allData = createSlice({
     }
 })
 
-export let { dish } = allData.actions;
+// export let { dish } = allData.actions;
 
 export default configureStore({
     reducer: { 
